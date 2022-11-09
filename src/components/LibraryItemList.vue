@@ -48,7 +48,7 @@ export default {
       let newLibrary = [];
 
       axios.get(`https://itunes.apple.com/search?term=${this.searchTerm.replace(' ', '+')}&limit=50`)
-          .then(function (response) {
+          .then((response) => {
             if (response.data.resultCount > 0) {
               response.data.results.forEach(item => {
                 let media = ItemFactory(item);

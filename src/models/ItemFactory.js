@@ -12,17 +12,17 @@ function ItemFactory(item) {
     } else {
         switch (item.kind) {
             case 'song':
-                return new Song(item.collectionName ?? '', Math.floor(item.trackTimeMillis/60000) ?? '', item.artworkUrl100 ?? '')
+                return new Song(item.trackName , Math.floor(item.trackTimeMillis/60000) , item.artworkUrl100 )
             case 'music-video':
-                return new MusicVideo(item.collectionName ?? '', Math.floor(item.trackTimeMillis/60000) ?? '', item.artworkUrl100 ?? '')
+                return new MusicVideo(item.trackName , Math.floor(item.trackTimeMillis/60000) , item.artworkUrl100 )
             case 'feature-movie':
-                return new Movie(item.collectionName ?? '', Math.floor(item.trackTimeMillis/60000) ?? '', item.artworkUrl100 ?? '')
+                return new Movie(item.trackName , Math.floor(item.trackTimeMillis/60000) , item.artworkUrl100 )
             case 'podcast':
-                return new Podcast(item.collectionName ?? '', Math.floor(item.trackTimeMillis/60000) ?? '', item.artworkUrl100 ?? '')
+                return new Podcast(item.trackName , Math.floor(item.trackTimeMillis/60000) , item.artworkUrl100 )
             case 'tv-episode':
-                return new Tv(item.collectionName ?? '', Math.floor(item.trackTimeMillis/60000) ?? '', item.artworkUrl100 ?? '')
+                return new Tv(item.trackName , Math.floor(item.trackTimeMillis/60000) , item.artworkUrl100 )
             case 'ebook':
-                return new Book(item.collectionName ?? '', item.genres ?? '', item.artworkUrl100 ?? '')
+                return new Book(item.trackName , item.genres , item.artworkUrl100 )
             default:
                 console.log(item)
         }
